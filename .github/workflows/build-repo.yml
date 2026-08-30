@@ -1,0 +1,36 @@
+name: Build and Deploy APT Repo
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dpkg-dev
+        run: sudo apt-get update && sudo apt-get install -y dpkg-dev
+
+      - name: Generate Packages file
+        run: |
+          dpkg-scanpackages debs /dev/null > Packages
+          gzip -k -f Packages
+          bzip2 -k -f Packages
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
