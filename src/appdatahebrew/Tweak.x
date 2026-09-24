@@ -2,8 +2,10 @@
 // Translated by Omri Guez. Rootless, SpringBoard + Preferences.
 
 #import <UIKit/UIKit.h>
+#import <objc/runtime.h>
 
-#define ADH_CREDIT @"תרגום לעברית: Omri Guez"
+#define ADH_CREDIT_GROUP @"תרגום לעברית"
+#define ADH_CREDIT_ROW @"תורגם על ידי Omri Guez"
 #define ADH_FOOTER_FIRST_LINE @"Swipe up/down or 3D Touch to open."
 
 static NSDictionary<NSString *, NSString *> *gTranslations; // exact keys
@@ -46,7 +48,7 @@ static NSString *ADHTranslateMultiline(NSString *text) {
         }
     }
     if (!changed) return nil;
-    if (isMainFooter) { [out addObject:@""]; [out addObject:ADH_CREDIT]; }
+    (void)isMainFooter;
     return [out componentsJoinedByString:@"\n"];
 }
 
@@ -145,11 +147,14 @@ static void ADHFixNavigationItem(UIViewController *vc) {
     }
 }
 
+static void ADHAddCreditRow(UIViewController *vc);
+
 %hook UIViewController
 
 - (void)viewWillAppear:(BOOL)animated {
     %orig;
     ADHFixNavigationItem(self);
+    ADHAddCreditRow(self);
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -158,6 +163,55 @@ static void ADHFixNavigationItem(UIViewController *vc) {
 }
 
 %end
+
+
+#pragma mark - Credit row (Settings)
+
+@interface PSSpecifier : NSObject
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) NSInteger cellType;
++ (instancetype)groupSpecifierWithName:(NSString *)name;
++ (instancetype)preferenceSpecifierNamed:(NSString *)name target:(id)target set:(SEL)set get:(SEL)get detail:(Class)detail cell:(NSInteger)cell edit:(Class)edit;
+@end
+
+@interface PSListController : UIViewController
+@end
+
+// AppData's controller overrides -specifiers without calling super, so the row is
+// inserted through the public PSListController API when the screen appears.
+@interface PSListController (ADH)
+- (NSArray *)specifiers;
+- (void)insertContiguousSpecifiers:(NSArray *)specifiers atIndex:(NSInteger)index animated:(BOOL)animated;
+@end
+
+static void ADHAddCreditRow(UIViewController *vc) {
+    if (!gIsPreferences || !ADHControllerIsAppData(vc)) return;
+    Class listClass = NSClassFromString(@"PSListController");
+    Class specClass = NSClassFromString(@"PSSpecifier");
+    if (!listClass || !specClass || ![vc isKindOfClass:listClass]) return;
+    PSListController *list = (PSListController *)vc;
+    if (![list respondsToSelector:@selector(insertContiguousSpecifiers:atIndex:animated:)]) return;
+
+    NSArray *specs = [list specifiers];
+    if (![specs isKindOfClass:[NSArray class]]) return;
+    NSUInteger insertAt = NSNotFound;
+    BOOL isRoot = NO;
+    for (NSUInteger i = 0; i < specs.count; i++) {
+        PSSpecifier *s = specs[i];
+        NSString *n = [s respondsToSelector:@selector(name)] ? s.name : nil;
+        if (![n isKindOfClass:[NSString class]]) continue;
+        if ([n isEqualToString:ADH_CREDIT_ROW]) return; // already there
+        if ([n isEqualToString:@"Modified By"] || [n isEqualToString:@"Features & Guide"]) isRoot = YES;
+        if ([n isEqualToString:@"Open Source"] && insertAt == NSNotFound) insertAt = i;
+    }
+    if (!isRoot) return;
+
+    PSSpecifier *group = [specClass groupSpecifierWithName:ADH_CREDIT_GROUP];
+    PSSpecifier *row = [specClass preferenceSpecifierNamed:ADH_CREDIT_ROW target:vc set:NULL get:NULL detail:Nil cell:4 edit:Nil];
+    if (!group || !row) return;
+    if (insertAt == NSNotFound) insertAt = specs.count;
+    [list insertContiguousSpecifiers:@[group, row] atIndex:(NSInteger)insertAt animated:NO];
+}
 
 #pragma mark - Init
 
