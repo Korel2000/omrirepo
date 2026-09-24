@@ -1,0 +1,9 @@
+Package: com.korel2000.appdatahebrew
+Name: AppData Hebrew
+Version: 1.0.1
+Architecture: iphoneos-arm64
+Description: תרגום לעברית לטוויק AppData. תורגם על ידי Omri Guez.
+Maintainer: Omri Guez
+Author: Omri Guez
+Section: Tweaks
+Depends: mobilesubstrate, firmware (>= 15.0)
