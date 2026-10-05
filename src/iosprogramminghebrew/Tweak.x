@@ -124,3 +124,24 @@ static NSString *tr(NSString *s) {
         %init;
     }
 }
+__attribute__((constructor)) static void ipbDiag(void) {
+    [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidBecomeActiveNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        static BOOL shown = NO;
+        if (shown) return;
+        shown = YES;
+        NSString *msg = [NSString stringWithFormat:@"bundle: %@\nactive: %d\nwords: %lu", [NSBundle mainBundle].bundleIdentifier, gActive, (unsigned long)gDict.count];
+        UIWindow *w = nil;
+        for (UIScene *sc in [UIApplication sharedApplication].connectedScenes) {
+            if ([sc isKindOfClass:[UIWindowScene class]]) {
+                for (UIWindow *x in ((UIWindowScene *)sc).windows) {
+                    if (x.isKeyWindow) w = x;
+                }
+            }
+        }
+        UIViewController *vc = w.rootViewController;
+        while (vc.presentedViewController) vc = vc.presentedViewController;
+        UIAlertController *a = [UIAlertController alertControllerWithTitle:@"IOSProgHebrew" message:msg preferredStyle:UIAlertControllerStyleAlert];
+        [a addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [vc presentViewController:a animated:YES completion:nil];
+    }];
+}
