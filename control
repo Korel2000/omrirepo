@@ -1,0 +1,9 @@
+Package: com.korel2000.iosprogramminghebrew
+Name: iOS-Programming Hebrew
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Description: Runtime Hebrew translation for the UI of the iOS-Programming / blatantsPatch tweaks
+Maintainer: Omri Guez
+Author: Omri Guez
+Section: Tweaks
+Depends: mobilesubstrate

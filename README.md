@@ -1,21 +1,12 @@
-# Sileo Repo
+# iOS-Programming Hebrew (עברית)
 
-Minimal APT source structure for Sileo (jailbroken iPhone package manager), hosted on GitHub Pages.
+טוויק rootless שמתרגם בזמן ריצה את הממשק של iOS-Programming.dylib ו-blatantsPatch.dylib לעברית.
+הוא פעיל רק בתהליכים שבהם אחת הספריות נטענה, ולא נוגע בקבצים שלהן.
 
-## Setup
+## איך מוסיפים תרגומים
+1. התקן את ה-deb, פתח את האפליקציה שבה הטוויק מופיע.
+2. פתח Console / `idevicesyslog` וסנן לפי `IOSProgHebrew`. כל טקסט שלא תורגם מופיע כשורה `MISSING: <טקסט>`.
+3. הוסף את הטקסט כמפתח ואת התרגום כערך ב-`/var/jb/Library/Application Support/IOSProgrammingHebrew/he.plist`.
+4. סגור את האפליקציה ופתח מחדש.
 
-1. Settings -> Pages -> Build and deployment -> Source: GitHub Actions
-2. Push a .deb file into debs/ and the Action rebuilds Packages and deploys automatically.
-3. Add the repo to Sileo: Sources -> + -> paste https://<username>.github.io/<repo-name>/
-
-## Local build (optional)
-
-Run ./generate.sh on Linux/WSL with dpkg-dev installed to regenerate Packages before pushing.
-
-## Structure
-
-- debs/ - put .deb files here
-- Packages, Packages.gz, Packages.bz2 - auto-generated, do not edit by hand
-- generate.sh - local build script
-- index.html - simple landing page
-- .github/workflows/ - CI automation
+התאמה היא לטקסט מדויק בלבד, ולכן טקסטים עם מספרים משתנים צריכים הוספה פרטנית.

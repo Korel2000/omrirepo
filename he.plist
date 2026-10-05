@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Account</key>
+	<string>חשבון</string>
+	<key>Activate</key>
+	<string>הפעל</string>
+	<key>Activation</key>
+	<string>הפעלה</string>
+	<key>Back</key>
+	<string>חזרה</string>
+	<key>Buy</key>
+	<string>קנה</string>
+	<key>Buy Now</key>
+	<string>קנה עכשיו</string>
+	<key>Cancel</key>
+	<string>ביטול</string>
+	<key>Close</key>
+	<string>סגור</string>
+	<key>Continue</key>
+	<string>המשך</string>
+	<key>Copy</key>
+	<string>העתק</string>
+	<key>Credits: Omri Guez</key>
+	<string>תרגום: עומרי גואז</string>
+	<key>Delete</key>
+	<string>מחק</string>
+	<key>Disabled</key>
+	<string>כבוי</string>
+	<key>Done</key>
+	<string>סיום</string>
+	<key>Enabled</key>
+	<string>מופעל</string>
+	<key>Enter License Key</key>
+	<string>הזן מפתח רישיון</string>
+	<key>Error</key>
+	<string>שגיאה</string>
+	<key>Expired</key>
+	<string>פג תוקף</string>
+	<key>Expires</key>
+	<string>תוקף עד</string>
+	<key>Free</key>
+	<string>חינם</string>
+	<key>Invalid License</key>
+	<string>רישיון לא תקין</string>
+	<key>Invalid license</key>
+	<string>רישיון לא תקין</string>
+	<key>License</key>
+	<string>רישיון</string>
+	<key>License Key</key>
+	<string>מפתח רישיון</string>
+	<key>Loading...</key>
+	<string>טוען...</string>
+	<key>Log In</key>
+	<string>התחברות</string>
+	<key>Log Out</key>
+	<string>התנתקות</string>
+	<key>Login</key>
+	<string>התחברות</string>
+	<key>Logout</key>
+	<string>התנתקות</string>
+	<key>Next</key>
+	<string>הבא</string>
+	<key>No</key>
+	<string>לא</string>
+	<key>OK</key>
+	<string>אישור</string>
+	<key>Password</key>
+	<string>סיסמה</string>
+	<key>Paste</key>
+	<string>הדבק</string>
+	<key>Please wait...</key>
+	<string>אנא המתן...</string>
+	<key>Premium</key>
+	<string>פרימיום</string>
+	<key>Purchase</key>
+	<string>רכישה</string>
+	<key>Restore Purchases</key>
+	<string>שחזור רכישות</string>
+	<key>Retry</key>
+	<string>נסה שוב</string>
+	<key>Save</key>
+	<string>שמור</string>
+	<key>Settings</key>
+	<string>הגדרות</string>
+	<key>Sign In</key>
+	<string>כניסה</string>
+	<key>Subscribe</key>
+	<string>הרשמה למנוי</string>
+	<key>Subscription</key>
+	<string>מנוי</string>
+	<key>Success</key>
+	<string>הצלחה</string>
+	<key>Thank you</key>
+	<string>תודה</string>
+	<key>Trial</key>
+	<string>ניסיון</string>
+	<key>Username</key>
+	<string>שם משתמש</string>
+	<key>Welcome</key>
+	<string>ברוך הבא</string>
+	<key>Yes</key>
+	<string>כן</string>
+</dict>
+</plist>
