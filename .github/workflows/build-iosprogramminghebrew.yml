@@ -1,0 +1,33 @@
+name: build-iosprogramminghebrew
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/iosprogramminghebrew/**'
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Theos
+        run: |
+          brew install ldid dpkg make
+          git clone --recursive https://github.com/theos/theos.git $HOME/theos
+          echo "THEOS=$HOME/theos" >> $GITHUB_ENV
+          echo "$(brew --prefix make)/libexec/gnubin" >> $GITHUB_PATH
+      - name: Build
+        working-directory: src/iosprogramminghebrew
+        run: make package FINALPACKAGE=1
+      - name: Copy deb to debs/
+        run: |
+          mkdir -p debs
+          cp src/iosprogramminghebrew/packages/*.deb debs/
+      - name: Commit deb
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add debs/
+          git commit -m "Add iOS-Programming Hebrew deb" || echo "nothing to commit"
+          git push
