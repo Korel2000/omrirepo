@@ -2,6 +2,38 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Language</key>
+	<string>שפה</string>
+	<key>Skills</key>
+	<string>מיומנויות</string>
+	<key>App</key>
+	<string>אפליקציה</string>
+	<key>Rate</key>
+	<string>דרג</string>
+	<key>Test</key>
+	<string>מבחן</string>
+	<key>Honor</key>
+	<string>הישגים</string>
+	<key>Unlock</key>
+	<string>פתיחה</string>
+	<key>The Basics</key>
+	<string>יסודות</string>
+	<key>Data Types</key>
+	<string>סוגי נתונים</string>
+	<key>Control Flow</key>
+	<string>בקרת זרימה</string>
+	<key>Function</key>
+	<string>פונקציות</string>
+	<key>Class</key>
+	<string>מחלקות</string>
+	<key>Extension</key>
+	<string>הרחבות</string>
+	<key>Foundation</key>
+	<string>Foundation</string>
+	<key>Advanced</key>
+	<string>מתקדם</string>
+	<key>Project</key>
+	<string>פרויקט</string>
 	<key>Cancel</key>
 	<string>ביטול</string>
 	<key>OK</key>
@@ -12,17 +44,7 @@
 	<string>המשך</string>
 	<key>Settings</key>
 	<string>הגדרות</string>
-	<key>Login</key>
-	<string>התחברות</string>
-	<key>License</key>
-	<string>רישיון</string>
-	<key>Premium</key>
-	<string>פרימיום</string>
-	<key>Restore Purchases</key>
-	<string>שחזור רכישות</string>
 	<key>Error</key>
 	<string>שגיאה</string>
-	<key>Credits: Omri Guez</key>
-	<string>תרגום: עומרי גואז</string>
 </dict>
 </plist>
