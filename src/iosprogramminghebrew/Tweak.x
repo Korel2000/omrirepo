@@ -87,3 +87,40 @@ static NSString *tr(NSString *s) {
         %init;
     }
 }
+%hook UIViewController
+- (void)setTitle:(NSString *)t {
+    NSString *n = tr(t);
+    %orig(n);
+}
+%end
+
+%hook UIAlertController
+- (void)setTitle:(NSString *)t {
+    NSString *n = tr(t);
+    %orig(n);
+}
+- (void)setMessage:(NSString *)m {
+    NSString *n = tr(m);
+    %orig(n);
+}
+%end
+
+%ctor {
+    @autoreleasepool {
+        NSString *bid = [[NSBundle mainBundle] bundleIdentifier];
+        gActive = (bid.length > 0 && ![bid hasPrefix:@"com.apple."]);
+        gLogged = [NSMutableSet set];
+        gDict = [@{
+            @"Language": @"שפה", @"Skills": @"מיומנויות", @"App": @"אפליקציה",
+            @"Rate": @"דרג", @"Test": @"מבחן", @"Honor": @"הישגים", @"Unlock": @"פתיחה",
+            @"The Basics": @"יסודות", @"Data Types": @"סוגי נתונים",
+            @"Control Flow": @"בקרת זרימה", @"Function": @"פונקציות",
+            @"Class": @"מחלקות", @"Extension": @"הרחבות", @"Foundation": @"Foundation",
+            @"Advanced": @"מתקדם", @"Project": @"פרויקט"
+        } mutableCopy];
+        NSString *path = ROOT_PATH_NS(@"/Library/Application Support/IOSProgrammingHebrew/he.plist");
+        NSDictionary *extra = [NSDictionary dictionaryWithContentsOfFile:path];
+        if (extra) [gDict addEntriesFromDictionary:extra];
+        %init;
+    }
+}
