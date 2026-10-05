@@ -41,31 +41,35 @@ static NSString *tr(NSString *s) {
 }
 
 %hook UILabel
-- (void)setText:(NSString *)t { %orig(tr(t)); }
+- (void)setText:(NSString *)t {
+    NSString *n = tr(t);
+    %orig(n);
+}
 %end
 
 %hook UIButton
-- (void)setTitle:(NSString *)t forState:(UIControlState)s { %orig(tr(t), s); }
+- (void)setTitle:(NSString *)t forState:(UIControlState)s {
+    NSString *n = tr(t);
+    %orig(n, s);
+}
 %end
 
 %hook UITextField
-- (void)setPlaceholder:(NSString *)p { %orig(tr(p)); }
+- (void)setPlaceholder:(NSString *)p {
+    NSString *n = tr(p);
+    %orig(n);
+}
 %end
 
 %hook UIViewController
-- (void)setTitle:(NSString *)t { %orig(tr(t)); }
+- (void)setTitle:(NSString *)t {
+    NSString *n = tr(t);
+    %orig(n);
+}
 %end
 
 %hook UIAlertController
-- (void)setTitle:(NSString *)t { %orig(tr(t)); }
-- (void)setMessage:(NSString *)m { %orig(tr(m)); }
-%end
-
-%ctor {
-    @autoreleasepool {
-        gLogged = [NSMutableSet set];
-        NSString *path = ROOT_PATH_NS(@"/Library/Application Support/IOSProgrammingHebrew/he.plist");
-        gDict = [NSDictionary dictionaryWithContentsOfFile:path] ?: @{};
-        %init;
-    }
-}
+- (void)setTitle:(NSString *)t {
+    NSString *n = tr(t);
+    %orig(n);
+}​​​​​​​​​​​​​​​​
