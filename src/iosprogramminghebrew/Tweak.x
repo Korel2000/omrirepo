@@ -72,4 +72,18 @@ static NSString *tr(NSString *s) {
 - (void)setTitle:(NSString *)t {
     NSString *n = tr(t);
     %orig(n);
-}​​​​​​​​​​​​​​​​
+}
+- (void)setMessage:(NSString *)m {
+    NSString *n = tr(m);
+    %orig(n);
+}
+%end
+
+%ctor {
+    @autoreleasepool {
+        gLogged = [NSMutableSet set];
+        NSString *path = ROOT_PATH_NS(@"/Library/Application Support/IOSProgrammingHebrew/he.plist");
+        gDict = [NSDictionary dictionaryWithContentsOfFile:path] ?: @{};
+        %init;
+    }
+}
