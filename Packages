@@ -1,0 +1,16 @@
+Package: com.guez.pantherbypass
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Maintainer: Omri <omri@localhost>
+Installed-Size: 21
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: debs/com.guez.pantherbypass_1.0.0_iphoneos-arm64.deb
+Size: 9644
+MD5sum: 509f2df9d3eb9add8de24a4e3c319d62
+SHA1: 1f28ee17b65884490f6ee28792f3b376de29ca50
+SHA256: 43fe142467babbd1e470204fde2b8e226b6fc35349126c719d571edf1d582bfc
+Section: Tweaks
+Description: Hides Dopamine rootless jailbreak paths from Panther (com.ylm.ylmPanther)
+Author: Omri
+Name: Panther Bypass
+
