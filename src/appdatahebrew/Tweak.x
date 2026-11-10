@@ -26,7 +26,7 @@ static NSString *ADHKeyForLine(NSString *line) {
 static NSString *ADHKeyFor(NSString *text) {
     if (![text isKindOfClass:[NSString class]]) return nil;
     NSUInteger len = text.length;
-    if (len == 0 || len > 60) return nil; // cheap early exit for the hot path
+    if (len == 0 || len > 90) return nil; // cheap early exit for the hot path
     return ADHKeyForLine(text);
 }
 
@@ -78,9 +78,24 @@ static BOOL ADHViewInAppDataContext(UIView *view) {
     return NO;
 }
 
+// Labels with a live counter, e.g. "URL Schemes (1)": translate the name, keep the count.
+static NSString *ADHTranslateWithCount(NSString *text) {
+    if (![text isKindOfClass:[NSString class]]) return nil;
+    NSUInteger len = text.length;
+    if (len < 5 || len > 60 || [text characterAtIndex:len - 1] != ')') return nil;
+    NSRange open = [text rangeOfString:@" (" options:NSBackwardsSearch];
+    if (open.location == NSNotFound) return nil;
+    NSString *count = [text substringWithRange:NSMakeRange(open.location + 2, len - open.location - 3)];
+    if (count.length == 0 ||
+        [count rangeOfCharacterFromSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]].location != NSNotFound) return nil;
+    NSString *key = ADHKeyForLine([text substringToIndex:open.location]);
+    if (!key) return nil;
+    return [NSString stringWithFormat:@"%@ (%@)", gTranslations[key], count];
+}
+
 static NSString *ADHTranslationFor(NSString *text, UIView *view) {
     NSString *key = ADHKeyFor(text);
-    if (!key) return ADHTranslateMultiline(text);
+    if (!key) return ADHTranslateWithCount(text) ?: ADHTranslateMultiline(text);
     if (gIsPreferences && [gGenericKeys containsObject:key]) {
         if (!view || !view.window || !ADHViewInAppDataContext(view)) return nil;
     }
@@ -300,6 +315,38 @@ static void ADHAddCreditRow(UIViewController *vc) {
             @"Bundle": @"חבילה",
             @"Data": @"נתונים",
 
+            // Added from screenshots (round 2): action dialogs + Advanced / More Info sheets
+            @"Select downgrade method.": @"בחר שיטת שנמוך גרסה.",
+            @"Server": @"שרת",
+            @"Custom ID": @"מזהה מותאם אישית",
+            @"Cancel": @"ביטול",
+            @"彻底卸载应用": @"מחיקת האפליקציה לצמיתות",
+            @"Deletes app and all data. Cannot be undone.": @"מוחק את האפליקציה ואת כל הנתונים. לא ניתן לשחזר.",
+            @"Clear App Data": @"מחיקת נתוני אפליקציה",
+            @"Deletes Library and Documents in sandbox, keeping App Groups.": @"מוחק את Library ו-Documents בארגז החול ושומר על App Groups.",
+            @"Clear": @"ניקוי",
+            @"Edit or clear badge count.": @"ערוך או נקה את מספר התג.",
+            @"Apply": @"החלה",
+            @"Reset App Perms": @"איפוס הרשאות אפליקציה",
+            @"Revokes all privacy permissions (Camera, Photos, etc.).": @"מבטל את כל הרשאות הפרטיות (מצלמה, תמונות וכו׳).",
+            @"Reset": @"איפוס",
+            @"Rename": @"שינוי שם",
+            @"Enter new name for the icon.": @"הזן שם חדש לסמל.",
+            @"Build": @"מספר בנייה",
+            @"Min OS": @"גרסת iOS מינימלית",
+            @"Encrypted": @"מוצפן",
+            @"URL Schemes": @"סכמות URL",
+            @"Queries Schemes": @"סכמות שאילתה",
+            @"Activity Types": @"סוגי פעילות",
+            @"Background Modes": @"מצבי רקע",
+            @"Entitlements": @"הרשאות מערכת",
+            @"Allowed": @"מותר",
+            @"Off": @"כבוי",
+            @"iOS Settings": @"הגדרות iOS",
+            @"Tweak Injection": @"הזרקת טוויקים",
+            @"URL Redirects": @"הפניות URL",
+            @"Backgrounding": @"ריצה ברקע",
+
             // Footer lines
             ADH_FOOTER_FIRST_LINE: @"החלקה למעלה/למטה או 3D Touch לפתיחה.",
             @"Auto-clear applies to all.": @"ניקוי אוטומטי חל על כל האפליקציות.",
@@ -319,7 +366,8 @@ static void ADHAddCreditRow(UIViewController *vc) {
             @"Uninstall", @"Downgrade", @"Settings", @"Import", @"None", @"Guide",
             @"Developer", @"Source Code", @"Open Source", @"Default", @"Badge",
             @"Actions", @"Delete", @"System", @"Containers", @"Bundle", @"Data",
-            @"Redirects",
+            @"Redirects", @"Cancel", @"Clear", @"Apply", @"Reset", @"Rename", @"Server",
+            @"Build", @"Encrypted", @"Allowed", @"Off",
         ]];
 
         %init;
