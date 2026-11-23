@@ -1,0 +1,131 @@
+{
+  "minVersion": "0.1",
+  "headerImage": "",
+  "tintColor": "#5E5CE6",
+  "tabs": [
+    {
+      "tabname": "עברית",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "Shadow Hebrew Localization",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "תרגום מלא לעברית עבור טוויק Shadow",
+          "useBoldText": false,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "**מה זה Shadow?**\n\nShadow הוא טוויק מתקדם להסתרת זיהוי פריצה (Jailbreak Detection Bypass). הוא מונע מאפליקציות לזהות שהמכשיר פרוץ באמצעות מגוון שיטות hooking.\n\n**מה כולל התרגום:**\n- תרגום מלא של מסך ההגדרות הראשי\n- תרגום של כל אפשרויות העקיפה (Hooks)\n- תרגום מסך \"אודות\"\n- תרגום הגדרות לפי אפליקציה\n\n**איך להשתמש:**\n1. וודא ש-Shadow מותקן\n2. התקן את חבילת התרגום\n3. בצע Respring\n4. היכנס להגדרות → Shadow — הכל יופיע בעברית",
+          "useSpacing": true,
+          "useMargins": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "צילומי מסך מהתרגום",
+          "useBoldText": true
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "המסכים שצורפו מציגים את ממשק ההגדרות של Shadow לאחר התרגום לעברית (הגדרות עקיפה, אפשרויות hooking, הגדרות כלליות).",
+          "useSpacing": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "מחבר התרגום",
+          "text": "Omri Guez"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "גרסה",
+          "text": "1.0"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "קטגוריה",
+          "text": "Localization"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "תאימות",
+          "text": "iOS 14.0+"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "דורש",
+          "text": "Shadow (הטוויק המקורי)"
+        }
+      ],
+      "class": "DepictionStackView"
+    },
+    {
+      "tabname": "English",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "Shadow Hebrew Localization",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "Full Hebrew translation for the Shadow tweak",
+          "useBoldText": false,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "**What is Shadow?**\n\nShadow is an advanced Jailbreak Detection Bypass tweak. It prevents apps from detecting that the device is jailbroken using various hooking methods.\n\n**What this translation includes:**\n- Full translation of the main settings screen\n- Translation of all bypass / hook options\n- About screen translation\n- Per-app settings translation\n\n**How to use:**\n1. Make sure Shadow is installed\n2. Install this localization package\n3. Respring\n4. Go to Settings → Shadow — everything will appear in Hebrew",
+          "useSpacing": true,
+          "useMargins": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Translation Author",
+          "text": "Omri Guez"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Version",
+          "text": "1.0"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Section",
+          "text": "Localization"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Compatibility",
+          "text": "iOS 14.0+"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Requires",
+          "text": "Shadow (the original tweak)"
+        }
+      ],
+      "class": "DepictionStackView"
+    }
+  ],
+  "class": "DepictionTabView"
+}
