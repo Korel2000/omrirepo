@@ -36,9 +36,19 @@
           "useBoldText": true
         },
         {
-          "class": "DepictionMarkdownView",
-          "markdown": "המסכים שצורפו מציגים את ממשק ההגדרות של Shadow לאחר התרגום לעברית (הגדרות עקיפה, אפשרויות hooking, הגדרות כלליות).",
-          "useSpacing": true
+          "class": "DepictionScreenshotsView",
+          "itemCornerRadius": 12,
+          "itemSize": "{160, 346}",
+          "screenshots": [
+            {
+              "url": "https://korel2000.github.io/omrirepo/depictions/IMG_7380.png",
+              "accessibilityText": "מסך הגדרות Shadow בעברית"
+            },
+            {
+              "url": "https://korel2000.github.io/omrirepo/depictions/IMG_7381.png",
+              "accessibilityText": "אפשרויות עקיפה בעברית"
+            }
+          ]
         },
         {
           "class": "DepictionSeparatorView"
@@ -94,6 +104,29 @@
           "markdown": "**What is Shadow?**\n\nShadow is an advanced Jailbreak Detection Bypass tweak. It prevents apps from detecting that the device is jailbroken using various hooking methods.\n\n**What this translation includes:**\n- Full translation of the main settings screen\n- Translation of all bypass / hook options\n- About screen translation\n- Per-app settings translation\n\n**How to use:**\n1. Make sure Shadow is installed\n2. Install this localization package\n3. Respring\n4. Go to Settings → Shadow — everything will appear in Hebrew",
           "useSpacing": true,
           "useMargins": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Screenshots",
+          "useBoldText": true
+        },
+        {
+          "class": "DepictionScreenshotsView",
+          "itemCornerRadius": 12,
+          "itemSize": "{160, 346}",
+          "screenshots": [
+            {
+              "url": "https://korel2000.github.io/omrirepo/depictions/IMG_7380.png",
+              "accessibilityText": "Shadow settings in Hebrew"
+            },
+            {
+              "url": "https://korel2000.github.io/omrirepo/depictions/IMG_7381.png",
+              "accessibilityText": "Bypass options in Hebrew"
+            }
+          ]
         },
         {
           "class": "DepictionSeparatorView"
