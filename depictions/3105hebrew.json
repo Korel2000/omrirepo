@@ -1,1 +1,108 @@
-
+{
+  "minVersion": "0.1",
+  "headerImage": "",
+  "tintColor": "#0A84FF",
+  "tabs": [
+    {
+      "tabname": "עברית",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "3105 Hebrew Localization",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "תרגום מלא לעברית עבור אפליקציית 3105",
+          "useBoldText": false,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "חבילה זו מחליפה את קובץ התרגום באנגלית (`en.lproj`) של אפליקציית **3105** בגרסה עברית מלאה.\n\n**מה כלול:**\n- תרגום של כל המחרוזות בממשק\n- שמירה על הקבצים המקוריים (גיבוי)\n- שחזור אוטומטי בעת הסרה\n\n**איך להשתמש:**\n1. התקן את החבילה\n2. סגור לגמרי את 3105 (הסר מה-App Switcher)\n3. פתח מחדש — הממשק יופיע בעברית",
+          "useSpacing": true,
+          "useMargins": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "מחבר",
+          "text": "Omri Guez"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "גרסה",
+          "text": "1.1"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "קטגוריה",
+          "text": "Localization"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "תאימות",
+          "text": "iOS 15.0+"
+        }
+      ],
+      "class": "DepictionStackView"
+    },
+    {
+      "tabname": "English",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "3105 Hebrew Localization",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "Full Hebrew translation for the 3105 app",
+          "useBoldText": false,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "This package replaces the English (`en.lproj`) localization file of the **3105** app with a complete Hebrew translation.\n\n**Includes:**\n- Full interface string translation\n- Original files are backed up\n- Automatic restore on uninstall\n\n**How to use:**\n1. Install the package\n2. Fully close 3105 (remove from App Switcher)\n3. Reopen the app — the interface will appear in Hebrew",
+          "useSpacing": true,
+          "useMargins": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Author",
+          "text": "Omri Guez"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Version",
+          "text": "1.1"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Section",
+          "text": "Localization"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Compatibility",
+          "text": "iOS 15.0+"
+        }
+      ],
+      "class": "DepictionStackView"
+    }
+  ],
+  "class": "DepictionTabView"
+}

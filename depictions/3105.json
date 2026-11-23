@@ -1,1 +1,118 @@
-
+{
+  "minVersion": "0.1",
+  "headerImage": "",
+  "tintColor": "#FF6B00",
+  "tabs": [
+    {
+      "tabname": "עברית",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "3105",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "סביבת עבודה מקורית ל-iOS — ניהול קונטיינרים, טלאים, ניקוי וטפטים",
+          "useBoldText": false,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "**3105** היא אפליקציית עבודה מתקדמת לניהול קבצי אפליקציות, יצירת טלאי (`.3105`), ניקוי קל וייבוא חבילות טפטים של PosterBoard.\n\n**תכונות עיקריות:**\n- גלישה בנתוני אפליקציות לפי Bundle ID\n- יצירה ויישום של טלאי ניידים\n- ניקוי קבצי מטמון\n- תמיכה ב-PosterBoard\n- כולל תרגום לעברית\n\n**הערה:** לפונקציונליות מלאה נדרשת חתימה מתאימה (Enterprise).",
+          "useSpacing": true,
+          "useMargins": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "מחבר מקורי",
+          "text": "YangJiiii"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "אריזה ותרגום",
+          "text": "Omri Guez"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "גרסה",
+          "text": "2.0"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "קטגוריה",
+          "text": "Tweaks"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "תאימות",
+          "text": "iOS 16.0+"
+        }
+      ],
+      "class": "DepictionStackView"
+    },
+    {
+      "tabname": "English",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "3105",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "Native iOS workspace — app containers, portable patches, cleaner & wallpapers",
+          "useBoldText": false,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "**3105** is an advanced native iOS workspace for managing app container files, creating portable `.3105` patches, light cleaning, and importing PosterBoard wallpaper packs.\n\n**Main features:**\n- Browse app data by Bundle ID\n- Create and apply portable patches\n- Cache cleaner\n- PosterBoard support\n- Includes Hebrew localization\n\n**Note:** Full functionality requires appropriate (Enterprise) signing.",
+          "useSpacing": true,
+          "useMargins": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Original Author",
+          "text": "YangJiiii"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Packaging & Translation",
+          "text": "Omri Guez"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Version",
+          "text": "2.0"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Section",
+          "text": "Tweaks"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Compatibility",
+          "text": "iOS 16.0+"
+        }
+      ],
+      "class": "DepictionStackView"
+    }
+  ],
+  "class": "DepictionTabView"
+}
