@@ -1,0 +1,118 @@
+{
+  "minVersion": "0.1",
+  "headerImage": "",
+  "tintColor": "#FF9500",
+  "tabs": [
+    {
+      "tabname": "עברית",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "TrollStore Lite Hebrew Localization",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "תרגום מלא לעברית עבור TrollStore Lite",
+          "useBoldText": false,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "**מה זה TrollStore Lite?**\n\nTrollStore Lite (מאת opa334 ו-iosdump) הוא כלי להתקנת קבצי IPA באופן קבוע במכשירים נתמכים, ללא צורך בחתימה מתחדשת.\n\n**מה כולל התרגום:**\n- תרגום מלא של כל מחרוזות הממשק (יותר מ-1000 מחרוזות)\n- התקנה, ייבוא, מקורות, הגדרות ועוד\n\n**איך להשתמש:**\n1. התקן את TrollStore Lite מהמקור של iosdump\n2. התקן את חבילת התרגום הזו\n3. סגור לגמרי את TrollStore Lite ופתח מחדש\n\n**קישור להתקנת הטוויק המקורי:**\n[TrollStore Lite](sileo://package/com.opa334.trollstorelite) מהמקור https://iosdumpzzz.github.io/iosdump.repo/",
+          "useSpacing": true,
+          "useMargins": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "מחבר התרגום",
+          "text": "Omri Guez"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "יוצרי הטוויק",
+          "text": "opa334 & iosdump"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "גרסה",
+          "text": "1.0"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "קטגוריה",
+          "text": "Localization"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "תאימות",
+          "text": "iOS 14.0+"
+        }
+      ],
+      "class": "DepictionStackView"
+    },
+    {
+      "tabname": "English",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "TrollStore Lite Hebrew Localization",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "Full Hebrew translation for TrollStore Lite",
+          "useBoldText": false,
+          "useBottomMargin": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "**What is TrollStore Lite?**\n\nTrollStore Lite (by opa334 & iosdump) is a tool for permanently installing IPA files on supported devices without needing to re-sign.\n\n**What this translation includes:**\n- Full translation of the entire interface (1000+ strings)\n- Install, import, sources, settings and more\n\n**How to use:**\n1. Install TrollStore Lite from the iosdump repo\n2. Install this localization package\n3. Fully close TrollStore Lite and reopen it\n\n**Original tweak link:**\n[TrollStore Lite](sileo://package/com.opa334.trollstorelite) from https://iosdumpzzz.github.io/iosdump.repo/",
+          "useSpacing": true,
+          "useMargins": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Translation Author",
+          "text": "Omri Guez"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Tweak Authors",
+          "text": "opa334 & iosdump"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Version",
+          "text": "1.0"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Section",
+          "text": "Localization"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Compatibility",
+          "text": "iOS 14.0+"
+        }
+      ],
+      "class": "DepictionStackView"
+    }
+  ],
+  "class": "DepictionTabView"
+}
